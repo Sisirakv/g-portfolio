@@ -1,0 +1,276 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+<!-- Container -->
+
+<div id="container">
+
+
+
+		<!-- content 
+			================================================== -->
+		<div id="content">
+			<div class="inner-content">
+				<div class="portfolio-page">
+					<div class="portfolio-box">
+
+						{% for works in work %}
+
+						<div class="project-post {{works.category.title|slugify}}">
+							<img alt="" src=" {{works.image.crop.267x205}} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>{{works.project_name}}</h2>
+									<span>{{works.category}}</span>
+									<div><a href="{% url 'web:Details' works.id %}"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						{% endfor %}
+
+						{% comment %}
+						<div class="project-post photography">
+							<img alt="" src=" {% static 'upload/image2.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post web-design logo">
+							<img alt="" src=" {% static 'upload/image3.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post photography illustration">
+							<img alt="" src=" {% static 'upload/image4.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post nature logo">
+							<img alt="" src=" {% static 'upload/image5.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post web-design illustration">
+							<img alt="" src=" {% static 'upload/image6.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post photography">
+							<img alt="" src=" {% static 'upload/image7.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post nature illustration">
+							<img alt="" src=" {% static 'upload/image8.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post logo">
+							<img alt="" src=" {% static 'upload/image9.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post web-design nature">
+							<img alt="" src=" {% static 'upload/image10.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post photography illustration">
+							<img alt="" src=" {% static 'upload/image11.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post nature logo">
+							<img alt="" src=" {% static 'upload/image12.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post web-design illustration">
+							<img alt="" src=" {% static 'upload/image1.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post photography nature">
+							<img alt="" src=" {% static 'upload/image4.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post logo illustration">
+							<img alt="" src=" {% static 'upload/image5.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post photography logo">
+							<img alt="" src=" {% static 'upload/image2.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post nature">
+							<img alt="" src=" {% static 'upload/image12.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post logo illustration">
+							<img alt="" src=" {% static 'upload/image9.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post photography nature">
+							<img alt="" src=" {% static 'upload/image11.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-post nature logo">
+							<img alt="" src=" {% static 'upload/image6.jpg' %} ">
+							<div class="hover-box">
+								<div class="project-title">
+									<h2>Cool App Design</h2>
+									<span>development, mobile</span>
+									<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+								</div>
+							</div>
+						</div>
+
+
+						{% endcomment %}
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End content -->
+
+</div>
+
+<!-- End Container -->
+
+	<div class="info-box">
+		<a class="info-toggle" href="#"><i class="fa fa-info-circle"></i></a>
+		<div class="info-content">
+			<ul>
+				<li><i class="fa fa-phone"></i>+91 9847520679</li>
+				<li><i class="fa fa-envelope"></i><a href="#">contact@gedexo.com</a></li>
+				<li><i class="fa fa-home"></i>Kurupath, Kondotty, </li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="preloader">
+		<img alt="" src="images/preloader.html">
+	</div>
+
+
+{% endblock %}

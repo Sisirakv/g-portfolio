@@ -1,0 +1,76 @@
+{% load static %}
+
+<!-- Header
+		    ================================================== -->
+            <header>
+                <div class="logo-box">
+                    <a class="logo" href="index.html"><img alt="" src=" {% static 'images/glogo-01.png' %} "></a>
+                </div>
+                
+                <a class="elemadded responsive-link" href="#">Menu</a>
+    
+                <div class="menu-box ">
+                    <ul class="menu">
+                        <li><a class="active" href="{% url 'web:index' %}" style="color:black;"><span>Home</span></a></li>
+                    </ul>
+                    <br>
+                    <ul class="filter">
+                        <li><a href="#" class="active" style="color:white; padding-right: 32px;text-decoration: none;" data-filter="*"><span>All</span></a></li><br>
+                        {% for category in category %}
+            
+                        <li><a href="#" class="active" data-filter=".{{category.title|slugify}}" style="color:white;padding-right: 32px;text-decoration: none;"><span>{{category.title}}</span></a></li><br>
+            
+                        {% endfor %}
+
+
+
+                        <!-- <li><a href="about.html"><span>About</span></a></li>
+                        <li><a href="blog.html"><span>blog</span></a></li>
+                        <li><a href="single-post.html"><span>Single Post</span></a></li>
+                        <li class="drop"><a href="#"><span>Go To Level 2</span></a>
+                            <ul class="drop-down">
+                                <li><a href="#"><span>Level 2</span></a></li>
+                                <li class="drop"><a href="#"><span>Go To Level 3</span></a>
+                                    <ul class="drop-down">
+                                        <li><a href="#"><span>Level 3</span></a></li>
+                                        <li><a href="#"><span>Level 3</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><span>Level 2</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html"><span>Contact</span></a></li> -->
+                    </ul>				
+                </div>
+    
+
+                {% comment %}
+                <div class="filter-box">
+                    <!-- <h3>Filter<i class="fa fa-th-large"></i></h3> -->
+                    <ul class="filter">
+                        <li><a href="#" data-filter="*">All</a></li>
+
+                        {% for category in category %}
+
+                        <li><a href="#" class="active" data-filter=".{{category.title|slugify}}">{{category.title}}</a></li>
+                        
+                        {% endfor %}
+
+
+                        
+                        <li><a href="#" data-filter=".web-design">Website</a></li>
+                        <li><a href="#" data-filter=".photography">Webapp</a></li>
+                        <li><a href="#" data-filter=".illustration">E-Commerce</a></li>
+                        <li><a href="#" data-filter=".nature">Mobile App</a></li>
+                        <li><a href="#" data-filter=".logo">Logo</a></li>
+                        <li><a href="#" data-filter=".logo">Package Design</a></li>  
+                        
+                    </ul>
+                </div>
+                {% endcomment %}
+
+            </header>
+            <!-- End Header -->
+
+
+            

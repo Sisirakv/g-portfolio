@@ -1,0 +1,124 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+
+	<!-- Container -->
+	<div id="container">
+
+		<!-- content 
+			================================================== -->
+		<div id="content">
+			<div class="inner-content">
+				<div class="single-project">
+
+					<div class="single-box">
+						<div class="single-box-content">
+							<div class="project-post-content">
+
+								<div class="flexslider">
+									<ul class="slides">
+
+									
+										<li>
+											<img alt="" src=" {{works.image.url}}" />
+										</li>
+									
+									</ul>
+								</div>
+							
+								<div class="project-text">
+									<h1>{{works.project_name}}</h1>
+									<p>{{works.details}}</p>			
+								</div>
+
+								<div class="similar-projects">
+									<h1>Similar Projects</h1>
+									<div class="portfolio-box">
+										{% for work in similar %}
+										<div class="project-post">
+											<img alt="" src=" {{work.image.crop.221x170}} ">
+											<div class="hover-box">
+												<div class="project-title">
+													<h2>{{work.project_name}}</h2>
+													<span>{{work.category}}</span>
+													<div><a href="{% url 'web:Details' works.category.id %}"><i class="fa fa-arrow-right"></i></a></div>
+												</div>
+											</div>
+										</div>
+										{% endfor %}
+										<!-- <div class="project-post">
+											<img alt="" src=" {% static 'upload/image2.jpg' %} ">
+											<div class="hover-box">
+												<div class="project-title">
+													<h2>Cool App Design</h2>
+													<span>development, mobile</span>
+													<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
+												</div>
+											</div>
+										</div> -->
+									</div>
+								</div>
+							</div>						
+						</div>
+						<div class="sidebar">
+							<div class="post-info">
+								<h1>Project Info</h1>
+								<ul>
+									<li>
+										<span><i class="fa fa-user"></i></span><a href="#"></a>
+									</li>
+									<li>
+										<span><i class="fa fa-heart"></i></span><a href="#"></a>
+									</li>
+									<li>
+										<span><i class="fa fa-calendar"></i></span><a href="#">{{ works.date }}</a>
+									</li>
+									<li>
+										<span><i class="fa fa-link"></i></span><a href="{{works.link}}" target="_blank">{{works.link}}</a>
+									</li>
+								</ul>
+							</div>
+							
+							<div class="project-gallery {{works.project_name|slugify}}">
+								<h1>Project Gallery</h1>
+								<ul>
+									{% for image in gallery %}
+
+									<li>
+										<a href="{{image.image.url}}"><img alt="" src=" {{image.image.url}} "></a>
+									</li>
+
+									{% endfor %}
+									
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- End content -->
+
+	</div>
+	<!-- End Container -->
+
+
+
+	<div class="info-box">
+		<a class="info-toggle" href="#"><i class="fa fa-info-circle"></i></a>
+		<div class="info-content">
+			<ul>
+				<li><i class="fa fa-phone"></i>+91 9847520679</li>
+				<li><i class="fa fa-envelope"></i><a href="#">contact@gedexo.com</a></li>
+				<li><i class="fa fa-home"></i>Kurupath, Kondotty </li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="preloader">
+		<img alt="" src="images/preloader.html">
+	</div>
+{% endblock %}
