@@ -2,6 +2,7 @@ from unicodedata import category
 from django.db import models
 from versatileimagefield.fields import VersatileImageField
 from django.template.defaultfilters import slugify
+from tinymce.models import HTMLField
 
 # Create your models here.
 
@@ -21,11 +22,16 @@ class Category(models.Model):
 class Works(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     project_name = models.CharField(max_length=200)
-    image = VersatileImageField('Image',upload_to='images/work/', null=True)
+    image1 = VersatileImageField('Image',upload_to='images/work/', null=True)
+    image2 = VersatileImageField('Image',upload_to='images/work/', null=True, blank=True)
+    image3 = VersatileImageField('Image',upload_to='images/work/', null=True, blank=True)
+    image4 = VersatileImageField('Image',upload_to='images/work/', null=True, blank=True)
+    image5 = VersatileImageField('Image',upload_to='images/work/', null=True, blank=True)
     details = models.TextField()
-    date = models.DateField(editable=True)
-    link = models.URLField()
-    slug = models.SlugField(unique=True)
+    info = HTMLField()
+    date = models.DateField(auto_now_add=True)
+    link = models.URLField(null=True, blank=True)
+    slug = models.SlugField(unique=True, null=True, blank=True)
     
     
     class Meta:
@@ -33,13 +39,5 @@ class Works(models.Model):
         
     def __str__(self):
         return str(self.project_name)
-    
-
-class Gallery(models.Model):
-    project_name = models.ForeignKey(Works, on_delete=models.CASCADE, null=True)
-    image = VersatileImageField('Image',upload_to='images/gallery/')
-    
-    
-    def __str__(self):
-        return str(self.project_name)
+   
     

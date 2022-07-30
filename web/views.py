@@ -2,7 +2,7 @@ from multiprocessing import context
 from unicodedata import category
 from django.shortcuts import get_object_or_404, render
 
-from .models import Category, Gallery, Works
+from .models import Category, Works
 
 # Create your views here.
 
@@ -22,12 +22,12 @@ def details(request, id):
 
     works = Works.objects.get(id=id)
     similar  = Works.objects.filter(category=works.category)
-    gallery = Gallery.objects.filter(project_name=works)
+    
 
     context={
         "similar" : similar,
         "works" : works,
-        "gallery" : gallery,
+       
     }
     return render(request,'details.html', context)
 

@@ -35,10 +35,23 @@
 								<div class="flexslider">
 									<ul class="slides">
 
-									
+										
 										<li>
-											<img alt="" src=" {{works.image.url}}" />
+											<img alt="" src=" {{works.image1.crop.422x303}}" />
 										</li>
+										<li>
+											<img alt="" src=" {{works.image2.crop.422x303}}" />
+										</li>
+										<li>
+											<img alt="" src=" {{works.image3.crop.422x303}}" />
+										</li>
+										<li>
+											<img alt="" src=" {{works.image4.crop.422x303}}" />
+										</li>
+										<li>
+											<img alt="" src=" {{works.image5.crop.422x303}}" />
+										</li>
+										
 									
 									</ul>
 								</div>
@@ -48,33 +61,7 @@
 									<p>{{works.details}}</p>			
 								</div>
 
-								<div class="similar-projects">
-									<h1>Similar Projects</h1>
-									<div class="portfolio-box">
-										{% for work in similar %}
-										<div class="project-post">
-											<img alt="" src=" {{work.image.crop.221x170}} ">
-											<div class="hover-box">
-												<div class="project-title">
-													<h2>{{work.project_name}}</h2>
-													<span>{{work.category}}</span>
-													<div><a href="{% url 'web:Details' works.category.id %}"><i class="fa fa-arrow-right"></i></a></div>
-												</div>
-											</div>
-										</div>
-										{% endfor %}
-										<!-- <div class="project-post">
-											<img alt="" src=" {% static 'upload/image2.jpg' %} ">
-											<div class="hover-box">
-												<div class="project-title">
-													<h2>Cool App Design</h2>
-													<span>development, mobile</span>
-													<div><a href="single-project.html"><i class="fa fa-arrow-right"></i></a></div>
-												</div>
-											</div>
-										</div> -->
-									</div>
-								</div>
+								
 							</div>						
 						</div>
 						<div class="sidebar">
@@ -83,12 +70,16 @@
 								<ul>
 									
 									<li>
-										<span><i class="fa fa-calendar"></i></span><a href="#">{{ works.category }}</a>
+										<span><i class="fa fa-star"></i></span><a href="#">{{ works.category }}</a>
 									</li>
 									<li>
-										<span><i class="fa fa-link"></i></span><a href="{{works.link}}" target="_blank">{{works.link}}</a>
+										<span><i class="fa fa-star"></i></span><a href="{{works.link}}" target="_blank">{{works.link}}</a>
 									</li>
+									
+										
+									
 								</ul>
+								<p ><span><i class="fa fa-star" style="    padding-top: 13px; padding-left: 9px; padding-right: 9px; color: #fdc010;"></i> More info</span>{{works.info|safe}}</p>
 							</div>
 							<div class="container my-0">
 					
@@ -114,20 +105,26 @@
 								<div id="notes" class="row container-fluid" >
 								</div>
 							</div><br><br><br>
-							<div class="project-gallery {{works.project_name|slugify}}">
-								<h1>Project Gallery</h1>
-								<ul>
-									{% for image in gallery %}
-
-									<li>
-										<a href="{{image.image.url}}"><img alt="" src=" {{image.image.url}} "></a>
-									</li>
-
+							
+							
+							<div class="similar-projects">
+								<h1>Similar Projects</h1>
+								<div class="portfolio-box">
+									{% for work in similar %}
+									<div class="project-post">
+										<img alt="" src=" {{work.image1.crop.221x170}} ">
+										<div class="hover-box">
+											<div class="project-title">
+												<h2>{{work.project_name}}</h2>
+												<span>{{work.category}}</span>
+												<div><a href="{% url 'web:Details' works.category.id %}"><i class="fa fa-arrow-right"></i></a></div>
+											</div>
+										</div>
+									</div>
 									{% endfor %}
 									
-								</ul>
+								</div>
 							</div>
-							
 						</div>
 					</div>
 
@@ -201,8 +198,8 @@
 	
 					<button id="${index}" onclick=
 						"deleteNote(this.id)"
-						class="btn btn-danger">
-						Delete
+						class="btn btn-danger"><i class="fa fa-trash-o"></i>
+						
 					</button>
 				</div>
 			</div>`;
