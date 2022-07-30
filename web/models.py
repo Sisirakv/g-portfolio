@@ -26,7 +26,7 @@ class Works(models.Model):
     image2 = VersatileImageField('Image',upload_to='images/work/', null=True, blank=True)
     image3 = VersatileImageField('Image',upload_to='images/work/', null=True, blank=True)
     image4 = VersatileImageField('Image',upload_to='images/work/', null=True, blank=True)
-    image5 = VersatileImageField('Image',upload_to='images/work/', null=True, blank=True)
+   
     details = models.TextField()
     info = HTMLField()
     date = models.DateField(auto_now_add=True)
