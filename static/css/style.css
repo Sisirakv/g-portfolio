@@ -589,6 +589,7 @@ ul li {
     width: 100%;
     top: 50%;
     margin-top: -75px;
+    /* margin: -66px 0px; */
 }
 
 .project-title h2 {
@@ -891,7 +892,7 @@ ul li {
 /*-------------------------------------------------*/
 
 .single-project {
-    padding: 30px;
+    padding: 10px;
 }
 
 .single-box {

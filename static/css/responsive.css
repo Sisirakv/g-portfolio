@@ -160,6 +160,40 @@
 @media (max-width: 581px) {
 
 	.project-post {
-	    width: 33.3%;
+	    width: 49.9%;
+	}
+	.project-title {
+		position: absolute;
+		z-index: 2;
+		left: 0;
+		width: 100%;
+		top: 50%;
+		margin: -66px 0px;
+	}
+	.project-title a {
+		display: inline-block;
+		clear: both;
+		width: 45px;
+		height: 45px;
+		border: 1px solid #fff;
+		text-align: center;
+		text-decoration: none;
+		border-radius: 50%;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-o-border-radius: 50%;
+		transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-webkit-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+	}
+	.project-title a i {
+		color: #fff;
+		font-size: 18px;
+		line-height: 46px;
+	}
+	.project-title h2 {
+		
+		font-size: 18px;
 	}
 }
