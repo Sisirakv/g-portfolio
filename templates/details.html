@@ -40,13 +40,25 @@
 											<img alt="" src=" {{works.image1.crop.422x303}}" />
 										</li>
 										<li>
+											{% if works.image2 %}
 											<img alt="" src=" {{works.image2.crop.422x303}}" />
+											{% else %}
+											<img alt="" src=" {{works.image1.crop.422x303}}" />
+											{% endif %}
 										</li>
 										<li>
+											{% if works.image3 %}
 											<img alt="" src=" {{works.image3.crop.422x303}}" />
+											{% else %}
+											<img alt="" src=" {{works.image1.crop.422x303}}" />
+											{% endif %}
 										</li>
 										<li>
+											{% if works.image4 %}
 											<img alt="" src=" {{works.image4.crop.422x303}}" />
+											{% else %}
+											<img alt="" src=" {{works.image1.crop.422x303}}" />
+											{% endif %}
 										</li>
 										
 										
