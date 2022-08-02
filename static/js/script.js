@@ -250,6 +250,7 @@ $(document).ready(function($) {
 			navbarVertical.slideDown(300).addClass('active');
 		}
 	});
+	
 
 	winDow.bind('resize', function(){
 		if ( winDow.width() > 768 ) {
@@ -290,3 +291,7 @@ $(document).ready(function($) {
 	});
 
 });
+
+
+
+

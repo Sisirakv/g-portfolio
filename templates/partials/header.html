@@ -7,7 +7,7 @@
         <a class="logo" href="#!"><img alt="" src=" {% static 'images/glogo-01.png' %} "></a>
     </div>
 
-    <a class="elemadded responsive-link" href="#">Work Category <i class="fa fa-chevron-down" aria-hidden="true"
+    <a class="elemadded responsive-link workcat" href="#">Work Category <i class="fa fa-chevron-down" aria-hidden="true"
             style="padding-left: 20px;"></i></a>
 
     <div class="menu-box ">
@@ -15,22 +15,29 @@
             <li><a class="active " href="{% url 'web:index' %}" style="color:black;"><span>Home</span></a></li>
         </ul>
         <br>
-        <ul class="filter">
-            <li><a onclick="visiosec('#home')" class="active"
-                    style="color:white; padding-right: 32px;text-decoration: none;" data-filter="*"><span>All</span></a>
-            </li><br>
-            {% for category in category %}
+           
+            <ul class="filter">
+                <li><a onclick="visiosec('#home')" class="active all"
+                        style="color:white; padding-right: 32px;text-decoration: none;" data-filter="*"><span>All</span></a>
+                </li>
+                {% for category in category %}
+    
+                <li><a href="#" class="active hidden-mobile " data-filter=".{{category.title|slugify}}"
+                    style="color:white;padding-right: 32px;text-decoration: none;"><span>{{category.title}}</span></a>
+                </li>
 
-            <li><a href="#" class="active" data-filter=".{{category.title|slugify}}"
-                    style="color:white;padding-right: 32px;text-decoration: none;" ><span>{{category.title}}</span></a>
-            </li><br>
-
-            {% endfor %}
-
-
-
-
-        </ul>
+                <li><a href="#" class="active elemadded hidden-lg" data-filter=".{{category.title|slugify}}"
+                        style="color:white;padding-right: 32px;text-decoration: none;"><span>{{category.title}}</span></a>
+                </li>
+    
+                {% endfor %}
+    
+    
+    
+    
+            </ul>
+       
+        
     </div>
 
 
@@ -46,5 +53,6 @@
         localStorage.setItem('apmnt', home)
         location.href = '/'
     }
-   
+
+
 </script>
