@@ -94,7 +94,7 @@
 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 	header {
 	    float: none;
 	    text-align: center;
@@ -155,6 +155,9 @@
 	ul.tab-links li a {
 		padding: 18px 0;
 	}
+	.similar-projects .project-post {
+		width: 49.9%!important;
+	}
 }
 
 @media (max-width: 581px) {
@@ -195,5 +198,19 @@
 	.project-title h2 {
 		
 		font-size: 18px;
+	}
+	.similar-projects .project-post {
+		width: 49.9%!important;
+	}
+	.similar-projects .project-title h2{
+		margin-top: 11px;
+		font-size: 18px!important;
+	}
+
+	.similar-projects .project-title span {
+		
+		padding-bottom: 5px;
+		
+		margin: 0 0 8px;
 	}
 }

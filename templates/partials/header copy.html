@@ -17,23 +17,10 @@
         <br>
         <ul class="filter">
             <li><a onclick="visiosec('#home')" class="active"
-                    style="color:white; padding-right: 32px;text-decoration: none;" data-filter="*"><span>All</span></a>
+                    style="color:white; padding-right: 32px;text-decoration: none;" data-filter="*"><span><i class="fa fa-arrow-left" aria-hidden="true" style="padding-right: 10px;"></i>Go Back</span></a>
             </li><br>
-            {% for category in category %}
-
-            <li><a href="#" class="active" data-filter=".{{category.title|slugify}}"
-                    style="color:white;padding-right: 32px;text-decoration: none;" ><span>{{category.title}}</span></a>
-            </li><br>
-
-            {% endfor %}
-
-
-
-
         </ul>
     </div>
-
-
 
 
 </header>
@@ -42,9 +29,13 @@
 
 
 <script>
-    function visiosec(home) {
-        localStorage.setItem('apmnt', home)
+    function visiosec(vision) {
+        localStorage.setItem('apmnt', vision)
         location.href = '/'
     }
-   
+    function visiosec1(title) {
+        alert(title)
+        location.href = '/'
+        
+    }
 </script>
