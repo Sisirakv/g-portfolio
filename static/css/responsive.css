@@ -113,9 +113,33 @@
 
 @media (max-width: 768px) {
 
+
+
+	/* new */
+
+	a.elemadded{
+		background: #242b2e;
+		padding: 10px;
+	}
+	a.workcat{
+		background: #fdc010;
+		padding: 20px;
+	}
+
+	.hidden-mobile {
+		display: none;
+	}
+	.filter .all{
+		padding-right: 15px!important;
+		font-size: 16px;
+		/* text-transform: capitalize!important; */
+	}
 	.filter li{
 		padding: 12px 0px 11px 0px;
 	}
+
+
+	/* new */
 
 	header {
 	    float: none;
@@ -227,7 +251,7 @@
 	}
 	.similar-projects .project-title h2{
 		margin-top: 11px;
-		font-size: 18px!important;
+		font-size: 15px!important;
 	}
 
 	.similar-projects .project-title span {
