@@ -207,8 +207,9 @@
 }
 
 @media (max-width: 581px) {
-	
-
+	.pb-2 {
+		padding: 0px 0px 0px 0px!important;
+	}
 	.project-post {
 	    width: 49.9%;
 	}
